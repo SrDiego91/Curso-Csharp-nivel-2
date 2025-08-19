@@ -29,17 +29,11 @@ namespace Desafio_1
         public int CodigoOperador 
         {
             get { return codigooperador; }
-            set { if (value == 1) 
+            set 
+            {
+                if (value >= 1 && value < 4)
                 {
-                    value = 1;
-                }
-                else if (value == 2)
-                {
-                    codigooperador = 2;   
-                }
-                else if (value == 3)
-                {
-                    codigooperador= 3;
+                    codigooperador = value;   
                 }
                 else
                 {

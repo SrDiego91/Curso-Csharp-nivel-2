@@ -34,18 +34,14 @@ namespace Desafio_1
             //8. Sobrecargar el método** Llamar(string contacto)** para que reciba un contacto y devuelva un string con la leyenda *"Llamando a " + contacto*.
             //9. Probar métodos en el main mostrando en pantalla el comportamiento de los objetos.
 
-            Telefono t1 = new Telefono();
-            Telefono t2 = new Telefono();
-            Telefono t3 = new Telefono();
-            Telefono t4 = new Telefono();
-            Telefono t5 = new Telefono();
+            Telefono telefono = new Telefono();
             Console.Write("Ingrese el numero: ");
-            t1.NumeroTelefonico = Console.ReadLine();
+            telefono.NumeroTelefonico = Console.ReadLine();
             Console.Write("Ingrese el codigo de operador: ");
-            t2.CodigoOperador = int.Parse(Console.ReadLine());
-            Console.WriteLine(t3.Llamar());
-            Console.WriteLine(t4.LLamar("Pepita"));
-            Console.WriteLine("Con el codigo de operador: " + t5.CodigoOperador);
+            telefono.CodigoOperador = int.Parse(Console.ReadLine());
+            Console.WriteLine(telefono.Llamar());
+            Console.WriteLine(telefono.LLamar("Pepita"));
+            Console.WriteLine("Con el codigo de operador: " + telefono.CodigoOperador);
 
 
         }
