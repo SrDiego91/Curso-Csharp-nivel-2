@@ -11,5 +11,7 @@ namespace proyecto_APP_0._1._0
         public string Titulo { get; set; }
         public DateTime FechaLanzamiento { get; set; }
         public int CantidadDeCanciones { get; set; }
+        public string UrlImagenTapa { get; set; }
+        public TipoDeEstilo Estilo { get; set; }
     }
 }

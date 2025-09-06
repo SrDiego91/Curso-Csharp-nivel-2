@@ -19,7 +19,7 @@ namespace proyecto_APP_0._1._0
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=DISCOS_DB; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select Titulo, FechaLanzamiento, CantidadCanciones from DISCOS";
+                comando.CommandText = "select D.Titulo, D.FechaLanzamiento, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion from DISCOS D, ESTILOS E where E.Id = D.IdEstilo";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -32,6 +32,7 @@ namespace proyecto_APP_0._1._0
                     DateTime fecha = lector.GetDateTime(1);
                     aux.FechaLanzamiento = fecha;   
                     aux.CantidadDeCanciones = (int)lector["CantidadCanciones"];
+                    aux.UrlImagenTapa = (string)lector["UrlImagenTapa"];
 
                     lista.Add(aux);
                     
