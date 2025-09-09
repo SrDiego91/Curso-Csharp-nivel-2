@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using negocio;
 
 namespace proyecto_APP_0._1._0
 {
@@ -44,11 +45,6 @@ namespace proyecto_APP_0._1._0
 
                 pbtapadiscos.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s");
             }
-        }
-
-        private void dgvdisco_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

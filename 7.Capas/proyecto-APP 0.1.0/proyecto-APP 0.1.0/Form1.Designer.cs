@@ -39,16 +39,15 @@
             this.dgvdisco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdisco.Location = new System.Drawing.Point(12, 13);
             this.dgvdisco.Name = "dgvdisco";
-            this.dgvdisco.Size = new System.Drawing.Size(617, 296);
+            this.dgvdisco.Size = new System.Drawing.Size(653, 370);
             this.dgvdisco.TabIndex = 0;
-            this.dgvdisco.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdisco_CellContentClick);
             this.dgvdisco.SelectionChanged += new System.EventHandler(this.dgvdisco_SelectionChanged);
             // 
             // pbtapadiscos
             // 
-            this.pbtapadiscos.Location = new System.Drawing.Point(635, 12);
+            this.pbtapadiscos.Location = new System.Drawing.Point(671, 12);
             this.pbtapadiscos.Name = "pbtapadiscos";
-            this.pbtapadiscos.Size = new System.Drawing.Size(343, 296);
+            this.pbtapadiscos.Size = new System.Drawing.Size(343, 370);
             this.pbtapadiscos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbtapadiscos.TabIndex = 1;
             this.pbtapadiscos.TabStop = false;
@@ -57,11 +56,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 322);
+            this.ClientSize = new System.Drawing.Size(1026, 395);
             this.Controls.Add(this.pbtapadiscos);
             this.Controls.Add(this.dgvdisco);
-            this.MaximumSize = new System.Drawing.Size(1006, 361);
-            this.MinimumSize = new System.Drawing.Size(1006, 361);
             this.Name = "frmdiscos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmdiscos_Load);

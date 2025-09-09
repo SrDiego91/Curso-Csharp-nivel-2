@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace dominio
 {
     public class disco
@@ -14,6 +13,6 @@ namespace dominio
         public int CantidadDeCanciones { get; set; }
         public string UrlImagenTapa { get; set; }
         public TipoDeEstilo Estilo { get; set; }
-        public TipoDeEdicion TipoEdicion { get; set; }
+        public TipoDeEdicion EdicionTipo { get; set; }
     }
 }

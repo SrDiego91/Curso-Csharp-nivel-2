@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B12877FD-BD35-4FAD-9129-01184BCE0E39}</ProjectGuid>
+    <ProjectGuid>{F1EC044B-2B84-4C11-8958-C8444F56C3F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>dominio</RootNamespace>
@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="disco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoDeEdicion.cs" />

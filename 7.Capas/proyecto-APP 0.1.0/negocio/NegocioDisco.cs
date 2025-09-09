@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using dominio;
 
-namespace proyecto_APP_0._1._0
+namespace negocio
 {
     public class NegocioDisco
     {
@@ -36,8 +36,8 @@ namespace proyecto_APP_0._1._0
                     aux.UrlImagenTapa = (string)lector["UrlImagenTapa"];
                     aux.Estilo = new TipoDeEstilo();
                     aux.Estilo.Descripcion = (string)lector["Descripcion"];
-                    aux.TipoEdicion = new TipoDeEdicion();
-                    aux.TipoEdicion.Edicion = (string)lector[5];
+                    aux.EdicionTipo = new TipoDeEdicion();
+                    aux.EdicionTipo.Edicion = (string)lector[5];
 
                     lista.Add(aux);
                     
