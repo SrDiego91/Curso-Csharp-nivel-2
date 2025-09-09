@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace proyecto_APP_0._1._0
 {
-    internal class TipoDeEstilo
+    internal class TipoDeEdicion
     {
         public int id { get; set; }
-        public string Descripcion { get; set; }
+        public string Edicion { get; set; }
         public override string ToString()
         {
-            return Descripcion;
+            return Edicion;
         }
     }
 }

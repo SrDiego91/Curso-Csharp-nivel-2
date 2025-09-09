@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace proyecto_APP_0._1._0
+
+namespace dominio
 {
-    internal class TipoDeEstilo
+    public class TipoDeEstilo
     {
         public int id { get; set; }
         public string Descripcion { get; set; }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using dominio;
 
 namespace proyecto_APP_0._1._0
 {
-    class NegocioDisco
+    public class NegocioDisco
     {
         public List<disco> listar()
         {
@@ -35,8 +36,8 @@ namespace proyecto_APP_0._1._0
                     aux.UrlImagenTapa = (string)lector["UrlImagenTapa"];
                     aux.Estilo = new TipoDeEstilo();
                     aux.Estilo.Descripcion = (string)lector["Descripcion"];
-                    aux.EdicionTipo = new TipoDeEdicion();
-                    aux.EdicionTipo.Edicion = (string)lector[5];
+                    aux.TipoEdicion = new TipoDeEdicion();
+                    aux.TipoEdicion.Edicion = (string)lector[5];
 
                     lista.Add(aux);
                     
