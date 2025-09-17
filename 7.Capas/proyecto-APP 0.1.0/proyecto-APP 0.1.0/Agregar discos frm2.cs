@@ -1,15 +1,16 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
-using negocio;
-using System.Data.SqlClient;
+using static System.Net.Mime.MediaTypeNames;
 namespace proyecto_APP_0._1._0
 {
     public partial class Frmagregardiscos : Form
@@ -33,10 +34,12 @@ namespace proyecto_APP_0._1._0
             {
               
                 disco.Titulo = txttitulo.Text;
-                disco.FechaLanzamiento = dtpfechalanzamiento.Value;
+                disco.FechaLanzamiento = dtpfechalanzamiento.Text;
                 disco.CantidadDeCanciones = int.Parse(txtcantidadcanciones.Text);
+                disco.UrlImagenTapa = txturltapadisco.Text;
                 disco.Estilo = (TipoDeEstilo)cbestilo.SelectedItem;
                 disco.Edicion = (TipoDeEdicion)cbedicion.SelectedItem;
+                
 
                 negocio.agregar(disco);
                 MessageBox.Show("Agregado exitosamente");
@@ -69,6 +72,22 @@ namespace proyecto_APP_0._1._0
 
         }
 
-        
+        private void txturltapadisco_Leave(object sender, EventArgs e)
+        {
+            CargarImagen(txturltapadisco.Text);
+        }
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                pbprecargardeagregarimagen.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbprecargardeagregarimagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s");
+            }
+        }
+
     }
 }

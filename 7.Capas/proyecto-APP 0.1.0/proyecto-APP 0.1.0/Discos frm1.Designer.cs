@@ -38,24 +38,27 @@
             // dgvdisco
             // 
             this.dgvdisco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdisco.Location = new System.Drawing.Point(12, 13);
+            this.dgvdisco.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvdisco.Location = new System.Drawing.Point(12, 14);
+            this.dgvdisco.MultiSelect = false;
             this.dgvdisco.Name = "dgvdisco";
-            this.dgvdisco.Size = new System.Drawing.Size(653, 370);
+            this.dgvdisco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvdisco.Size = new System.Drawing.Size(556, 286);
             this.dgvdisco.TabIndex = 0;
             this.dgvdisco.SelectionChanged += new System.EventHandler(this.dgvdisco_SelectionChanged);
             // 
             // pbtapadiscos
             // 
-            this.pbtapadiscos.Location = new System.Drawing.Point(671, 12);
+            this.pbtapadiscos.Location = new System.Drawing.Point(574, 14);
             this.pbtapadiscos.Name = "pbtapadiscos";
-            this.pbtapadiscos.Size = new System.Drawing.Size(343, 370);
+            this.pbtapadiscos.Size = new System.Drawing.Size(268, 287);
             this.pbtapadiscos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbtapadiscos.TabIndex = 1;
             this.pbtapadiscos.TabStop = false;
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(12, 399);
+            this.btnagregar.Location = new System.Drawing.Point(12, 305);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
             this.btnagregar.TabIndex = 2;
@@ -67,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 439);
+            this.ClientSize = new System.Drawing.Size(856, 335);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.pbtapadiscos);
             this.Controls.Add(this.dgvdisco);

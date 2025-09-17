@@ -32,9 +32,12 @@ namespace negocio
                 {
                     disco aux = new disco();
                     aux.Titulo = (string)lector["Titulo"];
-                    aux.FechaLanzamiento = (DateTime)lector["FechaLanzamiento"];
+                    aux.FechaLanzamiento = Convert.ToString(lector["FechaLanzamiento"]);
                     aux.CantidadDeCanciones = (int)lector["CantidadCanciones"];
-                    aux.UrlImagenTapa = (string)lector["UrlImagenTapa"];
+                    if (!(lector["UrlImagenTapa"] is DBNull))
+                    {
+                        aux.UrlImagenTapa = (string)lector["UrlImagenTapa"];
+                    }
                     aux.Estilo = new TipoDeEstilo();
                     aux.Estilo.Descripcion = (string)lector["Descripcion"];
                     aux.Edicion = new TipoDeEdicion();
@@ -59,13 +62,23 @@ namespace negocio
             try
             {
 
-                datos.setearconsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa) values (@Titulo,@Fecha,@CantidadDeCanciones,@UrlImagenTapa)");
-                SqlCommand comando = new SqlCommand();
-                comando.Parameters.AddWithValue("@Titulo", Convert.(nuevo.Titulo));
-                comando.Parameters.AddWithValue("@Fecha", Convert.ToDateTime(nuevo.FechaLanzamiento));
-                comando.Parameters.AddWithValue("@CantidadDeCanciones", Convert.ToInt32(nuevo.CantidadDeCanciones));
-                comando.Parameters.AddWithValue("@UrlImagenTapa", Convert.ToString(nuevo.UrlImagenTapa));                
+                //datos.setearconsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa) values (@Titulo,@Fecha,@CantidadDeCanciones,@UrlImagenTapa)");
+                //SqlCommand comando = new SqlCommand();
+                //string titulo, url;
+                //int cantcanciones;
+                //DateTime fecha;
+                //titulo = nuevo.Titulo;
+                //fecha = nuevo.FechaLanzamiento;
+                //cantcanciones = nuevo.CantidadDeCanciones;
+                //url = nuevo.UrlImagenTapa;
+                //comando.Parameters.AddWithValue("@Titulo", titulo);
+                //comando.Parameters.AddWithValue("@Fecha", fecha);
+                //comando.Parameters.AddWithValue("@CantidadDeCanciones", cantcanciones);
+                //comando.Parameters.AddWithValue("@UrlImagenTapa", url);                
                 //datos.setearconsulta("insert into DISCOS (Titulo, CantidadCanciones) values ('"+nuevo.Titulo+"', "+nuevo.CantidadDeCanciones+")");
+                datos.setearconsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion) values ('"+nuevo.Titulo+ "','"+nuevo.FechaLanzamiento+"',"+nuevo.CantidadDeCanciones+",'"+nuevo.UrlImagenTapa+"', @IdEstilo, @IdTipoEdicion)");
+                datos.setearParametro("@IdEstilo", nuevo.Estilo.id);
+                datos.setearParametro("@IdTipoEdicion", nuevo.Edicion.id);
                 datos.ejercutaraccion();
             }
             catch (Exception ex)

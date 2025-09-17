@@ -22,11 +22,23 @@ namespace proyecto_APP_0._1._0
 
         private void frmdiscos_Load(object sender, EventArgs e)
         {
-            NegocioDisco negocio = new NegocioDisco();
-            listadisco = negocio.listar();
-            dgvdisco.DataSource = listadisco;
-            dgvdisco.Columns["UrlImagenTapa"].Visible = false;
-            CargarImagen(listadisco[0].UrlImagenTapa);
+            cargar();
+        }
+        private void cargar() 
+        {
+            try
+            {
+                NegocioDisco negocio = new NegocioDisco();
+                listadisco = negocio.listar();
+                dgvdisco.DataSource = listadisco;
+                dgvdisco.Columns["UrlImagenTapa"].Visible = false;
+                CargarImagen(listadisco[0].UrlImagenTapa);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void dgvdisco_SelectionChanged(object sender, EventArgs e)
@@ -51,6 +63,7 @@ namespace proyecto_APP_0._1._0
         {
             Frmagregardiscos agregar = new Frmagregardiscos();
             agregar.ShowDialog();
+            cargar();
         }
     }
 }
