@@ -46,5 +46,11 @@ namespace proyecto_APP_0._1._0
                 pbtapadiscos.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s");
             }
         }
+
+        private void btnagregar_Click(object sender, EventArgs e)
+        {
+            Frmagregardiscos agregar = new Frmagregardiscos();
+            agregar.ShowDialog();
+        }
     }
 }

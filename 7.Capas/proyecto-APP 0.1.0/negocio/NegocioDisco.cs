@@ -1,10 +1,12 @@
-﻿using System;
+﻿using dominio;
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using dominio;
 
 namespace negocio
 {
@@ -30,14 +32,13 @@ namespace negocio
                 {
                     disco aux = new disco();
                     aux.Titulo = (string)lector["Titulo"];
-                    DateTime fecha = lector.GetDateTime(1);
-                    aux.FechaLanzamiento = fecha;   
+                    aux.FechaLanzamiento = (DateTime)lector["FechaLanzamiento"];
                     aux.CantidadDeCanciones = (int)lector["CantidadCanciones"];
                     aux.UrlImagenTapa = (string)lector["UrlImagenTapa"];
                     aux.Estilo = new TipoDeEstilo();
                     aux.Estilo.Descripcion = (string)lector["Descripcion"];
-                    aux.EdicionTipo = new TipoDeEdicion();
-                    aux.EdicionTipo.Edicion = (string)lector[5];
+                    aux.Edicion = new TipoDeEdicion();
+                    aux.Edicion.EdicionDescripcion = (string)lector[5];
 
                     lista.Add(aux);
                     
@@ -52,5 +53,35 @@ namespace negocio
             }
             
         }
+        public void agregar(disco nuevo) 
+        {
+            accesodatos datos = new accesodatos();
+            try
+            {
+
+                datos.setearconsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa) values (@Titulo,@Fecha,@CantidadDeCanciones,@UrlImagenTapa)");
+                SqlCommand comando = new SqlCommand();
+                comando.Parameters.AddWithValue("@Titulo", Convert.(nuevo.Titulo));
+                comando.Parameters.AddWithValue("@Fecha", Convert.ToDateTime(nuevo.FechaLanzamiento));
+                comando.Parameters.AddWithValue("@CantidadDeCanciones", Convert.ToInt32(nuevo.CantidadDeCanciones));
+                comando.Parameters.AddWithValue("@UrlImagenTapa", Convert.ToString(nuevo.UrlImagenTapa));                
+                //datos.setearconsulta("insert into DISCOS (Titulo, CantidadCanciones) values ('"+nuevo.Titulo+"', "+nuevo.CantidadDeCanciones+")");
+                datos.ejercutaraccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            {
+                datos.cerrarconexion();
+            }
+        }
+        public void modificar(disco modificar)
+        {
+
+        }
+
     }
 }

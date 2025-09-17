@@ -9,10 +9,10 @@ namespace dominio
     public class TipoDeEdicion
     {
         public int id { get; set; }
-        public string Edicion { get; set; }
+        public string EdicionDescripcion { get; set; }
         public override string ToString()
         {
-            return Edicion;
+            return EdicionDescripcion;
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.dgvdisco = new System.Windows.Forms.DataGridView();
             this.pbtapadiscos = new System.Windows.Forms.PictureBox();
+            this.btnagregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdisco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbtapadiscos)).BeginInit();
             this.SuspendLayout();
@@ -52,15 +53,27 @@
             this.pbtapadiscos.TabIndex = 1;
             this.pbtapadiscos.TabStop = false;
             // 
+            // btnagregar
+            // 
+            this.btnagregar.Location = new System.Drawing.Point(12, 399);
+            this.btnagregar.Name = "btnagregar";
+            this.btnagregar.Size = new System.Drawing.Size(75, 23);
+            this.btnagregar.TabIndex = 2;
+            this.btnagregar.Text = "Agregar";
+            this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
+            // 
             // frmdiscos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 395);
+            this.ClientSize = new System.Drawing.Size(1026, 439);
+            this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.pbtapadiscos);
             this.Controls.Add(this.dgvdisco);
             this.Name = "frmdiscos";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Discos";
             this.Load += new System.EventHandler(this.frmdiscos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdisco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbtapadiscos)).EndInit();
@@ -72,6 +85,7 @@
 
         private System.Windows.Forms.DataGridView dgvdisco;
         private System.Windows.Forms.PictureBox pbtapadiscos;
+        private System.Windows.Forms.Button btnagregar;
     }
 }
 
